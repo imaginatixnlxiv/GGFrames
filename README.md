@@ -1,6 +1,6 @@
 **GGFrames**
 
-GGFrames is webscrapper that uses the dustloop wiki to pull frame data about
+GGFrames is webscrapper that uses the [dustloop wiki](http://www.dustloop.com/wiki/index.php?title=GGXRD-R2/Frame_Data) to pull frame data about
 Guilty Gear characters. This is my senior year capstone. This program will use
 JFrame for all GUI aspects and Jaunt for all webscrapping aspects. My current
 goal is to get the webscrapping working and have a working user interface. In the
