@@ -1,9 +1,16 @@
-#header
+.body_headers
 {
 	text-align: center;
+}
+#page_header
+{
+	float:left;
+	padding-bottom: 30px;
+}
+#body
+{
 	font-family: Helvetica;
 }
-
 #intro
 {
 	background-color: grey;
@@ -15,16 +22,35 @@
 	background-color: grey;
 }
 
-#Information
+.Body_div
 {
 	background-color: white;
-	text-align: center;
+	text-align: left;
 	width: 62%;
 	/*height: 30%;*/
 	margin: auto;
-	font-family: Helvetica;
 	border-radius:40px;
 	padding: 15px;
+	padding-right: 4em;
+	padding-left: 6em;
 	/*padding-top: 10px;
 	padding-bottom: 20px;*/
+}
+.Spacer
+{
+	height: 30px;
+}
+.frame_sections
+{
+	text-align: left;
+}
+#Sidebar
+{
+	padding-top: 30px;
+	float: left;
+	background-color: white;
+	height: 40%;
+	/*width: 10%;*/
+	padding: 15px;
+	border-radius: 20px;
 }
