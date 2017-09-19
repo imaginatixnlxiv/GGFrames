@@ -53,4 +53,10 @@
 	/*width: 10%;*/
 	padding: 15px;
 	border-radius: 20px;
+	margin: -10px;
+}
+#Logo
+{
+	margin-bottom: 20px;
+	margin-right: 10px;
 }
