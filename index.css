@@ -5,7 +5,7 @@
 #page_header
 {
 	float:left;
-	padding-bottom: 30px;
+	padding-bottom: 30em;
 }
 #body
 {
@@ -29,10 +29,11 @@
 	width: 62%;
 	/*height: 30%;*/
 	margin: auto;
-	border-radius:40px;
-	padding: 15px;
+	border-radius: 4em;
+	padding: 1em;
 	padding-right: 4em;
 	padding-left: 6em;
+	margin-right: 8em;
 	/*padding-top: 10px;
 	padding-bottom: 20px;*/
 }
@@ -46,19 +47,19 @@
 }
 #Sidebar
 {
-	padding-top: 30px;
+	padding-top: 3em;
 	float: left;
 	background-color: white;
 	height: 40%;
 	/*width: 10%;*/
-	padding: 15px;
-	border-radius: 20px;
-	margin: -10px;
-	margin-top:207px;
+	padding: 1em;
+	border-radius: 2em;
+	margin: 0em;
+	margin-top:13em;
 }
 #Logo
 {
- margin-left: -130px;
- height: 200px;
- width: 200px;
+ margin-left: -10em;
+ height: 12.5em;
+ width: 12.5em;
 }
