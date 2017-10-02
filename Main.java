@@ -28,6 +28,8 @@ public class Main {
         GGFrames Frames = new GGFrames();
         //Checking if Dustloop is online
         Frames.check();
+        //Testing Char_Assign method
+        Frames.Char_Assign();
         //Creating title string
         String title = "";
         //Getting website <title> tag
