@@ -18,7 +18,6 @@ public class Window {
     public Window(String title) {
         //Calling creation methods
         CreateMainMenu();
-        //JLabelCreation();
         JMenuCreate();
         JButtonCreation(title);
     }
@@ -47,17 +46,6 @@ public class Window {
         JMenuBar MenuBar = new JMenuBar();
 
     }//End of JMenuCreate
-    /**
-     * Method that creates JLabels
-     * @param none
-     * @return none
-     * */
-    /*private void JLabelCreation(String Title)
-	{
-		JLabel Site_Title = new JLabel(Title,JLabel.CENTER);//Creating instance of JLabel for Site_Title
-        mainWindow.add(Site_Title);
-	}//End of JLabelCreation method
-    */
 
     /**
      * Creates buttons
