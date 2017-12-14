@@ -29,12 +29,8 @@ public class Main {
         //Checking if Dustloop is online
         Frames.check();
         //Testing Char_Assign method
-        Frames.Char_Assign();
-        //Creating title string
-        String title = "";
-        //Getting website <title> tag
-        title = Frames.title();
-        //Creating instance of Window class
-        Window myWindow = new Window(title);
+        //Frames.Char_Assign();
+        //Testing out arraylist
+        //Frames.title();
     }//End of main method
 }//End of main class
