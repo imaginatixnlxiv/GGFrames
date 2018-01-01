@@ -1,12 +1,12 @@
-
-<html>
+<html id = "top">
 	<head>
 		<link rel="stylesheet" type="text/css" href="index.css"></link>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"></link>
+        <script src="index.js"></script>
 		<title>GGFrames</title>
 	</head>
 	<body id = "body">
-		<img id="Logo" src="GGLogo.png" alt="GGFrames"></img>
+        <a href="#top"><img id="Logo" src="assets/GGLogo.png" alt="GGFrames"></img></a>
 		<div id="Sidebar">
 			<ul>
 				<li><a href="#Information">Information</a></li>
@@ -31,15 +31,27 @@
 		<div class="spacer"></div>
 		<div class="Body_div" id="Explaination">
 			<h2 class="body_headers">Frame Data Explained</h2>
-			<p>Frame data is the measurement of frames that make up a single move. Move frames are split into 3 sections: <Strong>Startup</Strong>, <Strong>Active</Strong>, and <Strong>Recovery</Strong>.</p>
+			<p>Frame data is the measurement of frames that make up a single move. 
+            Move frames are split into 3 sections: <Strong>Startup</Strong>, <Strong>Active</Strong>, and <Strong>Recovery</Strong>.</p>
 			<ul class="frame_sections">
-				<li><Strong>Startup Frames:</Strong> Startup Frames are the frames occur at the start of a move before, the move can actually hurt. Thus a move that is fast has less frames and a slow move has more frames.</li>
+				<li><Strong>Startup Frames:</Strong> Startup Frames are the frames occur at the start of a move before, 
+                    the move can actually hurt. Thus a move that is fast has less frames and a slow move has more frames.</li>
 				<br>
-				<li><Strong>Active Frames:</Strong> Active Frames are the frames in which the moves can cause damage to the opponent. The higher the frames the more time the move has to cause damage.</li>
+				<li><Strong>Active Frames:</Strong> Active Frames are the frames in which the moves can cause damage to the opponent. 
+                    The higher the frames the more time the move has to cause damage.</li>
 				<br>
-				<li><Strong>Recovery Frames:</Strong> Recovery Frames are the frames that occur after a moves active frames have ended. These frames determine the amount of time before your character can perform any action. Recovery frames are key in deciding on if a move is safe or not. The lower the frames the less recovery, therefore a move low recovery frames is considered safe.</li>
-				<p>Recovery frames are shown in 3 different sections on frame data tables. The first is if the attack whiffs. This is when you just throw out the attack without it having any effect on your opponent. The 2nd is if the attack hits the opponent. This is useful for determining if a combo is possible. The 3rd is the recovery frames on block. This determines the safeness of a move as well as indicate which moves you should use on your block strings.</p>
+				<li><Strong>Recovery Frames:</Strong> Recovery Frames are the frames that occur after a moves active frames have ended. 
+                    These frames determine the amount of time before your character can perform any action. 
+                    Recovery frames are key in deciding on if a move is safe or not. 
+                    The lower the frames the less recovery, therefore a move low recovery frames is considered safe.</li>
+				<p>Recovery frames are shown in 3 different sections on frame data tables. 
+                The first is if the attack whiffs. 
+                This is when you just throw out the attack without it having any effect on your opponent. 
+                The 2nd is if the attack hits the opponent. This is useful for determining if a combo is possible. 
+                The 3rd is the recovery frames on block. 
+                This determines the safeness of a move as well as indicate which moves you should use on your block strings.</p>
 				<p> <i>Note: </i>In Guilty Gear it is possible to skip recovery frames through the use of the Roman Cancel mechanic.</p>
+                <img id="FrameData" src="assets/fdExplained.gif" alt="Frame data explained"/>
 			</ul> 
 		</div>
 	</body>
