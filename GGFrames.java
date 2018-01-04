@@ -165,11 +165,16 @@ public class GGFrames
     		{
     			//Visiting current character's url
     			UserAgent char_site = new UserAgent();
-    			char_site.visit(CharList.get(i).getUrl());
-    			Element table = char_site.doc.getTable();
-    			Table test = new Table(table);
-    			System.out.println(test.getCell(i, i));
-    			//System.out.println(Tbl_Frames);
+    			char_site.visit(CharList.get(i).getUrl());//Setting url to user agent
+    			Elements tables = char_site.doc.findEach("<table>");//Getting all tables in a webpage
+    			Elements table_heading = char_site.doc.findEach("<h2>");//Getting all table headings
+    			//Creating a for loop to access each table in a webpage
+    			for(int f = 0; f < tables.size(); f++)
+    			{
+    				Table frames = char_site.doc.getTable(f);
+    				
+    				System.out.println(frames.getCell(0, 1).getText());
+    			}//End of for loop
     		}//End of for loop
     	}catch(JauntException e)
     	{
