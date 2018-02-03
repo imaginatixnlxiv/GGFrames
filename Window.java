@@ -44,9 +44,16 @@ public class Window {
 		mainWindow.setLocationRelativeTo(null);// Opens window in the center of the screen
 		mainWindow.setVisible(true);// Displays window
 		mainWindow.getContentPane().setBackground(Color.black);
-		MainMenuCreation();// Creates Buttons for Character Menu
+		LoadingScreen();
 	}// End of create method
-
+	
+	private void LoadingScreen()
+	{
+		JLabel load = new JLabel("Loading...", SwingConstants.CENTER);
+		JPanel quickText = new JPanel(new BorderLayout());
+		quickText.add(load, BorderLayout.CENTER);
+		mainWindow.add(quickText, BorderLayout.CENTER);
+	}
 	/**
 	 * Clears Screen then calls either create frame data or returns to main menu
 	 * 
@@ -107,9 +114,9 @@ public class Window {
 	 */
 	public void MainMenuCreation() {
 		// Creating label Chara_menu
-		JLabel chara_menu = new JLabel("Character Select", JLabel.CENTER);
+		JLabel chara_menu = new JLabel("Character Select", SwingConstants.CENTER);
 		//Creating JPanel title
-		JPanel menu_title = new JPanel(new GridLayout(1,1));
+		JPanel menu_title = new JPanel(new BorderLayout());
 		menu_title.setPreferredSize(new Dimension(200,800));
 		//Addint JLabel chara_menu to JPanel menu_title
 		menu_title.add(chara_menu);
@@ -130,7 +137,6 @@ public class Window {
 		int d = 0;
 		// While loop to add JButtons to JPanel
 		while (d < WindowData.size()) {
-			System.out.println("We in here");// Testing output
 			Char_buttons.add(new JButton(WindowData.get(d).getName()));// Adding JButton to ArrayList Char_buttons
 			character_select.add(Char_buttons.get(d));// Adding JButtons to JPanel
 			d++;// Incrementing

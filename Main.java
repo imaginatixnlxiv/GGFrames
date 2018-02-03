@@ -5,32 +5,17 @@
  * @version(8/19/17)
  **/
 
-//Imports
-
-import javax.swing.*;//Used for JFrame and JFrame related functions
-import java.util.Scanner;//Scanner used for user input
-
 /**
  * Main class
  **/
 public class Main {
-    /**
-     * Main method
-     * @param args default main argument
-     * @return none
-     **/
-    public static void main(String[] args) {
-        //Creating instance of Scanner
-        Scanner user_input = new Scanner(System.in);
-        //Input Verification
-        boolean flag = false;
-        //Creating instance of GGFrames
-        GGFrames Frames = new GGFrames();
-        //Checking if Dustloop is online
-        Frames.check();
-        //Testing Char_Assign method
-        //Frames.Char_Assign();
-        //Testing out arraylist
-        //Frames.title();
-    }//End of main method
-}//End of main class
+	/**
+	 * Main method
+	 * @param args default main argument
+	 * @return none
+	 **/
+	public static void main(String[] args) {
+		// Creating instance of GGFrames
+		GGFrames Frames = new GGFrames();
+	}// End of main method
+}// End of main class
