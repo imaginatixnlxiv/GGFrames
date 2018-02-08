@@ -5,6 +5,10 @@
  * @version(8/19/17)
  **/
 
+//Imports
+
+import java.util.Scanner;//Scanner used for user input
+
 /**
  * Main class
  **/
