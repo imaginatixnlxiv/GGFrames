@@ -22,20 +22,21 @@ public class Window {
 
 	public Window(ArrayList<Characters> list) {
 		obtainData(list);
-		CreateMainWindow();
+		CreateMainWindow(true);
 	}
-
+	
 	public void obtainData(ArrayList<Characters> myList) {
 		WindowData = myList;
 	}
 
+	
 	/**
 	 * Method that creates window
 	 * 
 	 * @param none
 	 * @return none
 	 */
-	private void CreateMainWindow() {
+	private void CreateMainWindow(boolean start) {
 		// Creating JFrame
 		mainWindow = new JFrame("GGFrames");// Creates instnace of JFrame and assigns window name
 		mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Close operation
@@ -44,9 +45,18 @@ public class Window {
 		mainWindow.setLocationRelativeTo(null);// Opens window in the center of the screen
 		mainWindow.setVisible(true);// Displays window
 		mainWindow.getContentPane().setBackground(Color.black);
-		LoadingScreen();
+		if(start == true)
+		{
+			LoadingScreen();
+		}
 	}// End of create method
 	
+	
+	/**
+	 * Creates loading screen while data is scraped online
+	 * @param none
+	 * @return
+	 */
 	private void LoadingScreen()
 	{
 		JLabel load = new JLabel("Loading...", SwingConstants.CENTER);
@@ -54,6 +64,8 @@ public class Window {
 		quickText.add(load, BorderLayout.CENTER);
 		mainWindow.add(quickText, BorderLayout.CENTER);
 	}
+	
+	
 	/**
 	 * Clears Screen then calls either create frame data or returns to main menu
 	 * 
@@ -64,20 +76,22 @@ public class Window {
 	 *            Determines what character was clicked
 	 * @return none
 	 **/
-	private void ClearScreen(boolean mode, int char_selected) {
+	private void ClearScreen(boolean mode,  String char_selected) {
 		// Clearing screen
 		mainWindow.removeAll();
 		mainWindow.revalidate();
+		System.out.println("cls");
 		// Calling either CreateFrameData or CreateMainWindow method
-		int character = char_selected;
+		String character = char_selected;
 		if (mode == false) {
-			// CreateFrameData(character);
+			CreateFrameData(character);
 		} // Creates FrameData table
 		else {
-			CreateMainWindow();
+			CreateMainWindow(false);
 		} // Returns to main menu
 	}// End of ClearScreen method
 
+	
 	/**
 	 * method that creates quitButton
 	 * 
@@ -107,6 +121,7 @@ public class Window {
 		mainWindow.add(bot_menu, BorderLayout.SOUTH);
 	}// End of method quitButton
 
+	
 	/**
 	 * Creates buttons
 	 * 
@@ -157,9 +172,67 @@ public class Window {
 		for(JButton colorize : Char_buttons)
 		{
 			colorize.setBackground(Color.decode("#1ca2db"));//Setting color to buttons as grey
+		}//End of For each loop to decorate buttons
+		//Adding action events
+		ActionListener button_events = new ButtonClick();
+		for(JButton button : Char_buttons)
+		{
+			button.addActionListener(button_events);
 		}
 		quitButton();// Calls method to create quit button
 		mainWindow.add(character_select);// Adding JPanel
 		mainWindow.revalidate();// Revalidating JFrame
 	}// End of MainMenuCreation method
+	
+	
+	/**
+	 * Events for button click
+	 * @return none
+	 * @param none
+	 */
+	class ButtonClick implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			String clicked = e.getActionCommand();
+			if(clicked == "main menu")
+			{
+				ClearScreen(true, "none");//Creates new main menu
+			} //End of if statement
+			else
+			{
+				ClearScreen(false, clicked);//Creates character window
+			}//End of else statement
+			System.out.println(clicked);//Debug
+			
+		}//End of method actionPerformed
+	}//End of ButtonClick
+	
+	
+	/**
+	 * Creates frame data table based on was selected
+	 * @param char_selected
+	 * @return none
+	 */
+	private void CreateFrameData(String char_selected)
+	{
+		System.out.println(name_searcher(char_selected));
+	}//End of method CreateFrameData
+	/**
+	 * Searches for which index name is stored in 
+	 * @param name Character selected
+	 * @return index Index in which the character is stored in 
+	 */
+	private int name_searcher(String name)
+	{
+		int index = 0;//Stores location of name in arraylist WindowData
+		//For loop to traverse WindowData in search of String name
+		for(int i = 0; i < WindowData.size(); i++)
+		{
+			if(name == WindowData.get(i).getName())
+			{
+				index = i;
+				break;
+			}
+		}//End of for loop
+		return index;
+	}
 }// End of class Window
