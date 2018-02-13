@@ -1,0 +1,71 @@
+.body_headers
+{
+	text-align: center;
+}
+#page_header
+{
+	float:left;
+	padding-bottom: 30em;
+}
+#body
+{
+	font-family: Helvetica;
+}
+#intro
+{
+	background-color: #579ac1;
+	text-align: center;
+}
+
+#body
+{
+	background-color: #579ac1;
+}
+
+.Body_div
+{
+	background-color: white;
+	text-align: left;
+    width: 50em;
+	/*height: 30%;*/
+	margin: auto;
+	border-radius: 4em;
+	padding: 1em;
+	padding-right: 4em;
+	padding-left: 6em;
+	margin-right: 8em;
+	/*padding-top: 10px;
+	padding-bottom: 20px;*/
+}
+.Spacer
+{
+	height: 30px;
+}
+.frame_sections
+{
+	text-align: left;
+}
+#Sidebar
+{
+	padding-top: 3em;
+	float: left;
+	background-color: white;
+	height: 40%;
+	/*width: 10%;*/
+	padding: 1em;
+	border-radius: 2em;
+	margin: 0em;
+	margin-top:13em;
+}
+#Logo
+{
+ margin-left: -10em;
+ height: 12.5em;
+ width: 12.5em;
+}
+#FrameData
+{
+    float: center;
+    width:275px;
+    height: 200px;
+}
