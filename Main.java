@@ -7,7 +7,6 @@
 
 //Imports
 
-import java.util.Scanner;//Scanner used for user input
 
 /**
  * Main class

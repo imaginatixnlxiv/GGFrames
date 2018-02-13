@@ -21,7 +21,7 @@ public class GGFrames
 	// Creating instance of Window class
 	Window myWindow;
 	// Dustloop GG Wiki home page
-	private String home_page = "http://www.dustloop.com/wiki/index.php?title=GGXRD-R2/Frame_Data";
+	//private String home_page = "http://www.dustloop.com/wiki/index.php?title=GGXRD-R2/Frame_Data";
 	// Arraylist of character urls
 	ArrayList<Characters> CharList = new ArrayList<Characters>();
 	// Arraylist of frame data
@@ -109,6 +109,7 @@ public class GGFrames
 		} // End of for loop
 	}// End of write_frames methods
 	**/
+	
 	/**
 	 * Scraps frame data from dustloop, stores it in a ArrayList and returns it to
 	 * write_frames method
@@ -120,6 +121,10 @@ public class GGFrames
 	{
 		//Placeholder values for temporary testing
 		String char_frames[][] = new String [999][999];
+		//Testing
+		//ArrayList <String[][]> tables = new ArrayList <String[][]>();
+		//Dimension of Arrays
+		int Array_dimension[] = new int [1];
 		try
 		{
 			//First loop used for selecting a url
@@ -151,19 +156,78 @@ public class GGFrames
 							//Outputting the single column choosen
 							//System.out.print(current_col.wholeText() + "	");
 							//Saving frame data
-							char_frames[e][d] = current_col.wholeText();
+							if(current_col.wholeText() != null)
+							{
+								char_frames[e][d] = current_col.wholeText();
+							}//End of if statement
 						}//End of for loop
 						//Creating at new line
-						//System.out.println("");
 					}//End of for loop
+
 				}//End of for loop
 				//Passing frame data to characters array list
-				CharList.get(i).setData(char_frames);
+				//Fixing 2d array size
+				Array_dimension = fixingArray(char_frames);
+				//Corrected 2d array
+				String frame_data [][] = new String [Array_dimension[0]][Array_dimension[1]];
+				for(int j = 0; j < frame_data.length; j++)
+				{
+					for(int d = 0; d < frame_data[i].length; d++)
+					{
+						if(char_frames[j][d] != null)
+						{
+							frame_data[j][d] = char_frames[j][d];
+						}//If statement
+					}//End of inner loop
+				}//End of outer for loop
+				CharList.get(i).setData(frame_data);
 			}//End of for loop
 		}/**End of try statement**/catch(IOException t)
 		{
 			System.err.print(t);
 		}//End of catch statement
+		/** Testing
+		for(int i = 0; i < tables.size(); i++)
+		{
+			String testing[][] = tables.get(i);
+			for(int j = 0; j < testing.length; j++)
+			{
+				for(int e = 0; e < testing[j].length;e++)
+				{
+					if(testing[j][e] != null)
+						System.out.print(testing[j][e]);
+				}
+				System.out.println();
+			}
+			System.out.println("----------------------------");
+		}**/
 	}//End of scrap_frames method
-
+	
+	/**
+	 * Method that returns the proper size of the 2d array
+	 * @param Data frame data scrapped
+	 * @return size proper array size
+	 */
+	private int [] fixingArray(String [][] Data)
+	{
+		//Initializing array size
+		int size [] = new int [2];
+		size[0] = 0;
+		size[1] = 0;
+		for(int i = 0; i < Data.length; i++)
+		{
+			if(Data[i][0] != null)
+			{
+				size[0]++;//Increasing row
+			}//End of if statement
+			for(int d = 0; d < Data[i].length; d++)
+			{
+				if(Data[i][d] != null)
+				{
+					size[1]++;//Increasing column
+				}//End of if statement
+			}//End of inner for loop
+		}//End of outer for loop
+		return size;
+	}//End of method fixingArray
 }// End of GGFrames

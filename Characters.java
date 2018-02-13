@@ -81,4 +81,23 @@ public class Characters {
 	public void setData(String[][] char_data) {
 		data = char_data;
 	}// End of method setData
-}
+	/**
+	 * Returns Frame Data
+	 * @param none
+	 * @return Data 2d string array that holds all frame data scrapped
+	 */
+	public String[][] getData()
+	{
+		for(int i = 0; i < data.length; i++)
+		{
+			for(int j = 0; j < data[i].length; j++)
+			{
+				if(data[i][j] == null)
+				{
+					data[i][j] = "";//Replacing all null values in 2d array data with a blank 
+				}//End of if statement
+			}//End of for loop
+		}//End of for loop
+		return data;//Returning variable data
+	}//End of method getData
+}//End of Characters class
